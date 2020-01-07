@@ -36,3 +36,32 @@ Personne.prototype.getInitiales = function(){
     return this.prenom.charAt(0)+this.nom.charAt(0);
 }
 lg(jules.getInitiales());
+
+var robert = {
+    prenom: 'Robert',
+    nom: 'LEPREFET',
+    pseudo: 'robert77',
+    getNomComplet: function() {
+        return this.nom + ' ' + this.prenom + ' ' + this.pseudo;
+    },
+}
+
+lg(afficherPersonne(robert));
+
+//Client
+
+function Client(nom,prenom,pseudo,numeroClient) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.pseudo = pseudo;
+    this.numeroClient=numeroClient;
+    this.getInfos=function(){
+        return this.numeroClient +' '+this.nom+' '+this.prenom;
+    };
+}
+
+var steve = new Client('LUCAS', 'Steve', 'steve44', 'A01');
+Personne(Personne.call(steve, steve.getInfos()));
+lg(afficherPersonne(steve));
+lg('nmero client', steve.numeroClient);
+lg(steve.getInfos());

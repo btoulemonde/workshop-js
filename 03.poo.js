@@ -20,10 +20,10 @@ function afficherPersonne(personne) {
     lg(personne.pseudo);
     lg(personne.getNomComplet());
 }
-lg(afficherPersonne(paul));
+afficherPersonne(paul);
 
 jules.pseudo='jules44'
-lg(jules.getNomComplet());
+afficherPersonne(jules);
 
 lg('age',jules.age);
 Personne.prototype.age='NON RENSEIGNE';
@@ -42,11 +42,11 @@ var robert = {
     nom: 'LEPREFET',
     pseudo: 'robert77',
     getNomComplet: function() {
-        return robert.nom + ' ' + robert.prenom + ' ' + robert.pseudo;
+        return this.nom + ' ' + this.prenom + ' ' + this.pseudo;
     },
 }
 
-lg(afficherPersonne(robert));
+afficherPersonne(robert);
 
 
 //Client
@@ -56,10 +56,10 @@ function Client(nom,prenom,pseudo,numeroClient) {
     this.getInfos=function(){
         return this.numeroClient +' '+this.nom+' '+this.prenom;
     };
-}
+};
 
 var steve = new Client('LUCAS', 'Steve', 'steve44', 'A01');
 
-lg(afficherPersonne(steve));
+afficherPersonne(steve);
 lg('nmero client', steve.numeroClient);
 lg(steve.getInfos());

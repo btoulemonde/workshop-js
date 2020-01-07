@@ -58,7 +58,7 @@ function Client(nom,prenom,pseudo,numeroClient) {
     };
 };
 
-var steve = new Client('LUCAS', 'Steve', 'steve44', 'A01');
+var steve = new  Client('LUCAS', 'Steve', 'steve44', 'A01');
 
 afficherPersonne(steve);
 lg('nmero client', steve.numeroClient);

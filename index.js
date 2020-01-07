@@ -1,8 +1,4 @@
-function Personne (id,name,password){
-    this.id=id;
-    this.name=name;
-    this.password=password;
-}
+
 
 function recupererUtilisateurs(){
 

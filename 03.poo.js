@@ -14,11 +14,11 @@ lg(jules.prenom);
 lg(jules.pseudo);
 lg(jules.getNomComplet());
 
-function afficherPersonne(Personne) {
-    lg(Personne.nom);
-    lg(Personne.prenom);
-    lg(Personne.pseudo);
-    lg(Personne.getNomComplet());
+function afficherPersonne(personne) {
+    lg(personne.nom);
+    lg(personne.prenom);
+    lg(personne.pseudo);
+    lg(personne.getNomComplet());
 }
 lg(afficherPersonne(paul));
 
@@ -42,18 +42,16 @@ var robert = {
     nom: 'LEPREFET',
     pseudo: 'robert77',
     getNomComplet: function() {
-        return this.nom + ' ' + this.prenom + ' ' + this.pseudo;
+        return robert.nom + ' ' + robert.prenom + ' ' + robert.pseudo;
     },
 }
 
 lg(afficherPersonne(robert));
 
-//Client
 
+//Client
 function Client(nom,prenom,pseudo,numeroClient) {
-    this.nom = nom;
-    this.prenom = prenom;
-    this.pseudo = pseudo;
+    Personne.call(this, nom,prenom,pseudo);
     this.numeroClient=numeroClient;
     this.getInfos=function(){
         return this.numeroClient +' '+this.nom+' '+this.prenom;
@@ -61,7 +59,7 @@ function Client(nom,prenom,pseudo,numeroClient) {
 }
 
 var steve = new Client('LUCAS', 'Steve', 'steve44', 'A01');
-Personne(Personne.call(steve, steve.getInfos()));
+
 lg(afficherPersonne(steve));
 lg('nmero client', steve.numeroClient);
 lg(steve.getInfos());

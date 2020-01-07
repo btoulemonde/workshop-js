@@ -4,7 +4,7 @@ function Personne(nom, prenom, pseudo) {
     this.prenom = prenom;
     this.pseudo = pseudo;
     this.getNomComplet = function () {
-        return nom + ' ' + prenom + ' ' + pseudo;
+        return this.nom + ' ' + this.prenom + ' ' + this.pseudo;
     }
 }
 var jules = new Personne('LEMAIRE', 'Jules', 'jules77');
@@ -21,3 +21,18 @@ function afficherPersonne(Personne) {
     lg(Personne.getNomComplet());
 }
 lg(afficherPersonne(paul));
+
+jules.pseudo='jules44'
+lg(jules.getNomComplet());
+
+lg('age',jules.age);
+Personne.prototype.age='NON RENSEIGNE';
+lg('age',jules.age);
+
+jules.age=30;
+lg('age',jules.age);
+
+Personne.prototype.getInitiales = function(){
+    return this.prenom.charAt(0)+this.nom.charAt(0);
+}
+lg(jules.getInitiales());
